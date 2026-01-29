@@ -171,6 +171,12 @@ header img {
   margin-top: 32px;
 }
 
+.fv p br,
+.fv-note br {
+  display: block;
+  content: "";
+  margin-top: 12px; /* 8〜14pxで好み調整 */
+}
 /* ライン */
 
 .fv h2::after {
