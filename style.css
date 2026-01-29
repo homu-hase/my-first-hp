@@ -27,6 +27,21 @@
   --c-fv-1: #f7f8f9;
   --c-fv-2: #f6f8fa;
   --c-fv-3: #f3f4f6;
+  --c-accent: var(--gold-color);
+
+  --c-text-main: var(--c-text-222);
+  --c-text-strong: var(--c-text-333);
+  --c-text-mid: var(--c-text-444);
+  --c-text-soft: var(--c-text-555);
+  --c-text-mute: var(--c-text-666);
+  --c-text-faint: var(--c-text-777);
+
+  --c-bg-base: var(--c-bg-fff);
+  --c-bg-soft: var(--c-bg-fafafa);
+  --c-bg-panel: var(--c-bg-f6f8fa);
+
+  --c-border: var(--c-border-e0);
+  --c-border-soft: var(--c-border-e5);
 
   /* Radius */
   --r-8: 8px;
@@ -257,7 +272,7 @@ header img {
 
 /* ====== 業務内容 ====== */
 .section.service {
-  padding-top: 80px;
+  padding-top: 96px;
 }
 
 .service-list {
@@ -284,12 +299,6 @@ header img {
   line-height: 1.4;
   position: relative;
   text-align: center;
-}
-
-.section-lead {
-  text-align: center;
-  margin: var(--sp-24) auto var(--sp-56);
-  max-width: 640px;
 }
 
 /* 見出し下の gold ライン */
@@ -390,7 +399,7 @@ header img {
 .handling-item li {
   position: relative;
   padding-left: var(--sp-16);
-  margin-bottom: 12px;
+  margin-bottom: var(--sp-12);
   line-height: 1.7;
 }
 
@@ -477,7 +486,7 @@ header img {
 
 .cta .btn {
   display: inline-block;
-  padding: var(--sp-16) var(--sp-48);
+  padding: var(--sp-16) var(--sp-24);
   background: var(--gold-color);
   color: var(--c-bg-fff);
   font-weight: 600;
@@ -588,7 +597,7 @@ footer small {
     display: block;
     max-width: 280px;
     margin: var(--sp-0) auto;
-    padding: var(--sp-14) var(--sp-20);
+    padding: var(--sp-16) var(--sp-24);
     font-size: 16px;
     box-sizing: border-box;
   }
