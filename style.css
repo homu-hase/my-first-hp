@@ -65,6 +65,14 @@
   --sp-96: 96px;
   --sp-100: 100px;
 }
+/* ===== Spacing Levels（役割名） =====
+  L0: none
+  L1: text spacing
+  L2: heading spacing
+  L3: block spacing
+  L4: group spacing
+  L5: emphasis spacing
+*/
 
 /* ====== 共通設定 ====== */
 body {
