@@ -131,13 +131,13 @@ a {
   height: var(--gold-height);
   background: var(--gold-color);
   opacity: var(--gold-opacity);
-  margin: var(--sp-20) auto var(--sp-0);
+  margin: var(--sp-24) auto var(--sp-0);
 }
 
 /* セクション導入文 */
 .section-lead {
   max-width: 720px;
-  margin: var(--sp-32) auto var(--sp-56);
+  margin: var(--sp-24) auto var(--sp-56);
   font-size: 16px;
   line-height: 1.9;
   text-align: center;
@@ -295,7 +295,7 @@ header img {
 .service-item h3 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: var(--sp-32);
+  margin-bottom: var(--sp-24);
   line-height: 1.4;
   position: relative;
   text-align: center;
@@ -334,9 +334,10 @@ header img {
 
 .strength-list li {
   position: relative;
-  padding-left: var(--sp-20);
+  padding-left: var(--sp-16);
   margin-bottom: var(--sp-16);
   line-height: 1.8;
+  left: -4px;
 }
 
 .strength-list li::before {
@@ -474,7 +475,7 @@ header img {
   width: 48px;
   height: 2px;
   background: var(--gold-color);
-  margin: var(--sp-20) auto var(--sp-0);
+  margin: var(--sp-24) auto var(--sp-0);
 }
 
 .cta-lead {
