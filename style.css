@@ -399,7 +399,7 @@ header img {
 .handling-item li {
   position: relative;
   padding-left: var(--sp-16);
-  margin-bottom: var(--sp-12);
+  margin-bottom: var(--sp-16);
   line-height: 1.7;
 }
 
