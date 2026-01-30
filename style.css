@@ -86,7 +86,7 @@ body {
 h1,
 h2,
 h3 {
-  margin: var(--sp-0) var(--sp-0) var(--sp-24);
+  margin: var(--sp-0) var(--sp-0) var(--space-2);
   font-weight: 600;
 }
 
@@ -106,7 +106,7 @@ h2::after {
 }
 
 p {
-  margin: var(--sp-0) var(--sp-0) var(--sp-16);
+  margin: var(--sp-0) var(--sp-0) var(--space-1);
 }
 
 a {
@@ -286,7 +286,7 @@ header img {
 .service-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-40);
+  gap: var(--space-4);
   margin-top: var(--sp-56);
 }
 
