@@ -345,6 +345,7 @@ header img {
   position: absolute;
   left: var(--sp-0);
   color: var(--gold-color);
+  left: -4px;
 }
 
 .strength-note {
