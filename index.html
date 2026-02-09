@@ -21,30 +21,19 @@
     <section class="fv">
       <div class="inner">
         <h1>
-          <span class="only-pc"
-            >許可取得の可否を左右するのは、申請前の整理です。</span
-          >
-          <span class="only-sp">許可取得は、申請前の整理がすべてです。</span>
+          <span id="typing"></span>
+          <span class="cursor" id="cursor">|</span>
         </h1>
 
         <p class="fv-note">
-          <span class="only-pc">
-            制度だけでなく、現場の状況を踏まえて整理します。
-          </span>
+          要件整理から書類作成まで、実務ベースで支援します。
         </p>
-        <span class="only-sp">
-          何から始めればいいかわからない段階でもご相談いただけます。
-        </span>
-        <h2>
-          <span class="only-pc">
-            建設業許可・経審・入札参加資格申請を中心に、<br />
-            申請準備・要件整理・書類作成まで実務ベースで対応します。
-          </span>
-          <span class="only-sp">
-            建設業許可・経審・各種申請を 実務ベースでサポートします。
-          </span>
-        </h2>
-        <p>中小企業・個人事業主の法人手続きを対象とした行政書士事務所です。</p>
+
+        <!-- <p class="fv-target">中小企業・個人事業主の手続きをサポートします。</p> -->
+
+        <p class="fv-help">
+          「何から始めればいいかわからない」段階からご相談ください。
+        </p>
       </div>
     </section>
 
@@ -199,7 +188,7 @@
         <h2>業務相談受付</h2>
 
         <p class="cta-copy">
-          「何から始めればいいかわからない」<br>
+          「何から始めればいいかわからない」<br />
           その段階からご相談ください。
         </p>
 
@@ -212,10 +201,9 @@
           href="mailto:soudan@office-hase.jp?subject=業務相談について"
         >
           メールで相談する
-        </a> 
+        </a>
       </div>
     </section>
-
 
     <!-- footer -->
     <footer>
@@ -232,5 +220,26 @@
         <small> ©行政書士はせがわ法務事務所 All Rights Reserved. </small>
       </div>
     </footer>
+
+    <script>
+      const text = "許可は、準備で決まる。";
+      const element = document.getElementById("typing");
+      const cursor = document.getElementById("cursor");
+
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 120);
+        } else {
+          // 打ち終わったらカーソルを消す
+          cursor.style.display = "none";
+        }
+      }
+
+      setTimeout(type, 400);
+    </script>
   </body>
 </html>

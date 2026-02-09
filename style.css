@@ -86,9 +86,7 @@ body {
   background: var(--c-bg-fff);
 }
 
-h1,
-h2,
-h3 {
+h2. h3 {
   margin: var(--sp-0) var(--sp-0) var(--sp-16);
   font-weight: 600;
 }
@@ -210,43 +208,31 @@ header img {
 }
 
 .fv-note {
-  margin: var(--sp-32) var(--sp-0) var(--sp-48);
-  font-size: 15px;
-  line-height: 2;
+  margin: 18px 0 0; /* ← 下を空けすぎない */
+  font-size: 16px;
+  line-height: 1.9;
   color: var(--c-text-555);
 }
 
 /* メインコピー */
 .fv h1 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin-bottom: var(--sp-24);
+  font-size: clamp(40px, 5vw, 56px);
   font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  margin-bottom: 22px;
 }
 
-/* サブコピー */
-.fv h2 {
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--c-text-333);
-  margin-bottom: var(--sp-32);
-  margin-top: var(--sp-0);
-  line-height: 1.7;
-}
+/* .fv-target { */
+/* margin-top: 18px;
+  font-size: 14px;
+  color: var(--c-text-666);
+} */
 
-/* 説明 */
-.fv p {
-  font-size: 16px;
-  color: var(--c-text-333);
-  max-width: 720px;
-  line-height: 1.9;
-  margin: var(--sp-0) auto;
-}
-
-.fv p:last-of-type {
-  margin-top: var(--sp-32);
+.fv-help {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--c-text-777);
 }
 
 .fv p br,
@@ -256,19 +242,17 @@ header img {
   margin-top: var(--sp-12);
 }
 
-/* ライン */
-.fv h2::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 2px;
-  background: var(--gold-color);
-  margin: var(--sp-32) auto var(--sp-40);
+/* FV内のp共通（強くしない） */
+.fv p {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.9;
 }
 
-.fv h2,
 .fv p {
-  max-width: none;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.9;
 }
 
 .fv::after {
@@ -286,22 +270,22 @@ header img {
   padding-top: 96px;
 }
 
+/* 業務内容も「対応業務」と同じカード感に寄せる */
 .service-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  background: #fff;
-  border-top: 1px solid var(--c-border-e0);
-  border-bottom: 1px solid var(--c-border-e0);
+  gap: var(--sp-32);
+  border: none;
+  background: transparent;
 }
 
 .service-item {
-  border: none; /* ← 四角い枠を消す */
-  padding: var(--sp-48) var(--sp-40);
+  border: 1px solid var(--c-border-e0);
+  border-radius: var(--r-8);
+  padding: var(--sp-40) var(--sp-32);
+  background: var(--c-bg-fff);
 }
 
 .service-item:not(:first-child) {
-  border-left: 1px solid var(--c-border-e0); /* ← 縦線だけ */
+  border-left: none; /* 縦線ルールを無効化 */
 }
 
 /* 見出し */
@@ -338,13 +322,13 @@ header img {
   background: var(--c-bg-fafafa);
 }
 
-.strength-list {
-  max-width: 720px;
-  margin: var(--sp-0) auto var(--sp-40);
-  padding-left: var(--sp-0);
-  list-style: none;
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-32);
+  border: none;
+  background: transparent;
 }
-
 .strength-list li {
   position: relative;
   padding-left: var(--sp-16);
@@ -530,6 +514,15 @@ header img {
   color: var(--c-text-333);
 }
 
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
 /* ====== Footer ====== */
 footer {
   background-color: var(--c-bg-f5f5f5) !important;
@@ -575,6 +568,27 @@ footer small {
     border-left: none; /* ← 縦線は消す */
   }
 }
+/* =========================
+   iPad（〜1024px）
+========================= */
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--sp-80) 0;
+  }
+
+  /* 2列 */
+  .service-list,
+  .handling-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-32);
+  }
+
+  .service-item,
+  .handling-item {
+    padding: var(--sp-40) var(--sp-32);
+  }
+}
 
 /* =========================
    iPhone（〜768px）
@@ -586,85 +600,8 @@ footer small {
   .only-sp {
     display: inline;
   }
-  .fv {
-    padding: var(--sp-64) var(--sp-0);
-    margin: var(--sp-16);
-  }
 
-  .fv h1 {
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 16px;
-  }
-
-  .fv h2 {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  .fv p,
-  .fv-note {
-    font-size: 15px;
-  }
-
-  .section {
-    padding: var(--sp-64) var(--sp-0);
-  }
-
-  .handling-list {
-    grid-template-columns: 1fr;
-    gap: var(--sp-24);
-  }
-
-  .service-item,
-  .handling-item {
-    padding: var(--sp-32) var(--sp-24);
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .service-list {
-    grid-template-columns: 1fr;
-    gap: var(--sp-24);
-    border-top: none;
-    border-bottom: none;
-    background: transparent;
-  }
-
-  .service-item {
-    border: 1px solid var(--c-border-e0);
-    border-radius: var(--r-8);
-    margin-bottom: var(--sp-16);
-    padding: var(--sp-32) var(--sp-24);
-  }
-
-  .service-item:not(:first-child) {
-    border-left: none;
-  }
-
-  .profile-table {
-    padding: var(--sp-24);
-  }
-
-  .profile-table dl {
-    grid-template-columns: 1fr;
-    gap: var(--sp-4);
-  }
-
-  .cta-lead {
-    font-size: 16px;
-  }
-
-  .cta .btn {
-    display: block;
-    max-width: 280px;
-    margin: var(--sp-0) auto;
-    padding: var(--sp-16) var(--sp-24);
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-
-  /* まず横スクロール事故を予防（保険） */
+  /* 横スクロール事故を予防（保険） */
   body {
     overflow-x: hidden;
   }
@@ -673,36 +610,70 @@ footer small {
     height: auto;
   }
 
-  /* FVの余白を詰めて密度を整える */
+  /* FV（スマホ） */
   .fv {
     margin: 12px;
     padding: 56px 0;
   }
+
   .fv h1 {
-    font-size: 22px;
-    line-height: 1.45;
+    font-size: 30px;
+    line-height: 1.35;
+    margin-bottom: 14px;
     white-space: normal;
   }
+
   .fv-note {
-    margin: 16px 0 24px;
+    margin: 16px 0 16px;
+    font-size: 15px;
     line-height: 1.85;
   }
 
-  /* 業務内容：スマホは“縦線表”をやめてカードで読みやすく */
-  .service-list {
+  .fv-target {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .fv-help {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  /* セクション余白 */
+  .section {
+    padding: var(--sp-64) 0;
+  }
+
+  /* スマホは1列（業務内容・対応業務どっちも） */
+  .service-list,
+  .handling-list {
     grid-template-columns: 1fr;
     gap: 14px;
-    border: none;
-    background: transparent;
-    margin-top: 22px;
   }
-  .service-item {
+
+  /* スマホはカード */
+  .service-item,
+  .handling-item {
     border: 1px solid var(--c-border-e0);
     border-radius: 14px;
     padding: 20px 18px;
+    font-size: 14px;
+    line-height: 1.8;
   }
+
+  /* 縦線ルールの無効化（念のため） */
   .service-item:not(:first-child) {
     border-left: none;
+  }
+
+  /* CTAボタン */
+  .cta .btn {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: var(--sp-16) var(--sp-24);
+    font-size: 16px;
+    box-sizing: border-box;
   }
 
   .cta-copy {
