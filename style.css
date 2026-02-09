@@ -612,21 +612,25 @@ footer small {
     line-height: 1.8;
   }
 
-  .service-item {
-    border-left: none;
-    border-top: 1px solid var(--c-border-e0);
-  }
-
   .service-list {
+    grid-template-columns: 1fr;
+    gap: var(--sp-24);
     border-top: none;
     border-bottom: none;
-    grid-template-columns: 1fr;
-    gap: var(--sp-0);
+    background: transparent;
   }
 
-  .service-item:first-child {
-    border-top: none;
+  .service-item {
+    border: 1px solid var(--c-border-e0);
+    border-radius: var(--r-8);
+    margin-bottom: var(--sp-16);
+    padding: var(--sp-32) var(--sp-24);
   }
+
+  .service-item:not(:first-child) {
+    border-left: none;
+  }
+
   .profile-table {
     padding: var(--sp-24);
   }
@@ -648,8 +652,4 @@ footer small {
     font-size: 16px;
     box-sizing: border-box;
   }
-}
-
-body {
-  outline: 6px solid red !important;
 }
