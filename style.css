@@ -286,17 +286,19 @@ header img {
 .service-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--sp-56);
+  gap: 0;
+  background: #fff;
+  border-top: 1px solid var(--c-border-e0);
+  border-bottom: 1px solid var(--c-border-e0);
 }
 
-/* カード */
 .service-item {
-  background: var(--c-bg-fff);
-  border: 1px solid var(--c-border-e0);
+  border: none; /* ← 四角い枠を消す */
   padding: var(--sp-48) var(--sp-40);
-  border-radius: var(--r-8);
-  overflow: hidden;
+}
+
+.service-item:not(:first-child) {
+  border-left: 1px solid var(--c-border-e0); /* ← 縦線だけ */
 }
 
 /* 見出し */
@@ -532,6 +534,13 @@ footer small {
   color: var(--c-text-777);
 }
 
+.only-pc {
+  display: inline;
+}
+.only-sp {
+  display: none;
+}
+
 /* =========================
    iPad（〜1024px）
 ========================= */
@@ -540,15 +549,19 @@ footer small {
     padding: var(--sp-80) var(--sp-0);
   }
 
-  .service-list,
-  .handling-list {
-    grid-template-columns: repeat(2, 1fr);
+  .service-list {
     gap: var(--sp-32);
+    border: none; /* ← 表の上下線を消す */
+    background: transparent;
   }
 
-  .service-item,
-  .handling-item {
-    padding: var(--sp-40) var(--sp-32);
+  .service-item {
+    border: 1px solid var(--c-border-e0); /* ← iPadは枠あり */
+    border-radius: var(--r-8);
+  }
+
+  .service-item:not(:first-child) {
+    border-left: none; /* ← 縦線は消す */
   }
 }
 
@@ -556,18 +569,26 @@ footer small {
    iPhone（〜768px）
 ========================= */
 @media (max-width: 768px) {
+  .only-pc {
+    display: none;
+  }
+  .only-sp {
+    display: inline;
+  }
   .fv {
     padding: var(--sp-64) var(--sp-0);
     margin: var(--sp-16);
   }
 
   .fv h1 {
-    font-size: 26px;
-    white-space: normal;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 16px;
   }
 
   .fv h2 {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .fv p,
@@ -579,7 +600,6 @@ footer small {
     padding: var(--sp-64) var(--sp-0);
   }
 
-  .service-list,
   .handling-list {
     grid-template-columns: 1fr;
     gap: var(--sp-24);
@@ -588,8 +608,23 @@ footer small {
   .service-item,
   .handling-item {
     padding: var(--sp-32) var(--sp-24);
+    font-size: 14px;
+    line-height: 1.8;
   }
 
+  .service-item {
+    border-left: none;
+    border-top: 1px solid var(--c-border-e0);
+  }
+
+  .service-list {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .service-item:first-child {
+    border-top: none;
+  }
   .profile-table {
     padding: var(--sp-24);
   }
