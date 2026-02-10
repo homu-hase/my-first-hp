@@ -28,15 +28,22 @@
         <p class="fv-note">
           要件整理から書類作成まで、実務ベースで支援します。
         </p>
+        <!-- ボタン -->
+        <div class="fv-cta">
+          <a
+            class="btn"
+            href="mailto:soudan@office-hase.jp?subject=業務相談について"
+          >
+            メールで相談する
+          </a>
+        </div>
 
-        <!-- <p class="fv-target">中小企業・個人事業主の手続きをサポートします。</p> -->
-
-        <!-- <p class="fv-help">
-          「何から始めればいいかわからない」段階からご相談ください。
-        </p> -->
+        <!-- 注意書き -->
+        <p class="note">
+          ※ご相談内容や要件により、必ずしも許可・認可が下りることをお約束するものではありません。
+        </p>
       </div>
     </section>
-
     <!-- 業務内容 -->
     <section class="section service">
       <div class="inner">
@@ -240,6 +247,17 @@
       }
 
       setTimeout(type, 400);
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const cta = document.querySelector(".cta");
+        const position = cta.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight * 0.85;
+
+        if (position < screenPosition) {
+          cta.classList.add("show");
+        }
+      });
     </script>
   </body>
 </html>
