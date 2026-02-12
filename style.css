@@ -354,15 +354,16 @@ header img {
 
 .strength-list li {
   position: relative;
-  padding-left: var(--sp-16);
-  margin-bottom: var(--sp-16);
-  line-height: 1.8;
+  padding-left: 1.4em;     /* 点ぶんのスペース確保 */
+  margin-bottom: 12px;
+  line-height: 1.85;
 }
 
 .strength-list li::before {
   content: "・";
   position: absolute;
-  left: -4px;
+  left: 0;
+  top: 0;
   color: var(--gold-color);
 }
 
@@ -682,6 +683,16 @@ footer small {
     padding: var(--sp-64) 0;
   }
 
+.strength-list li {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+
+  .sp-hide {
+    display: none;
+  }
+
   /* スマホは1列（業務内容・対応業務どっちも） */
   .service-list,
   .handling-list {
@@ -738,5 +749,4 @@ footer small {
     margin: 0;
     text-align: left;
   }
-
 }
