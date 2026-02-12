@@ -329,7 +329,7 @@
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add("is-visible");
-                io.unobserve(entry.target); // 1回だけでOK
+                io.unobserve(entry.target);
               }
             });
           },
