@@ -647,6 +647,11 @@ footer small {
   .reveal.reveal-card {
     transform: translateY(22px);
   }
+   /* IntersectionObserverが無い環境では最初から表示 */
+  .no-io .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 /* =========================
    iPhone（〜768px）
@@ -803,4 +808,34 @@ footer small {
     transform: none;
     opacity: 1;
     }
+}
+/* =========================
+   Scroll reveal（iPad/スマホ）
+   ※失敗しても消えない版
+========================= */
+@media (max-width: 1024px) {
+  /* JSが動いた時だけアニメON（動かなければ普通に表示される） */
+  html.reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 700ms ease, transform 700ms ease;
+    will-change: opacity, transform;
+  }
+
+  html.reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html.reveal-ready .reveal.reveal-card {
+    transform: translateY(22px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.reveal-ready .reveal {
+      transition: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
 }

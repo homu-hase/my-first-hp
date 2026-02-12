@@ -293,8 +293,10 @@
     </script>
 
     <script>
-      // iPad/スマホだけ scroll reveal
-      if (window.matchMedia("(max-width: 1024px)").matches) {
+      document.addEventListener("DOMContentLoaded", () => {
+        // iPad/スマホだけ
+        if (!window.matchMedia("(max-width: 1024px)").matches) return;
+
         const targets = [
           ".section .inner > h2",
           ".section .inner > .section-lead",
@@ -307,9 +309,11 @@
         ];
 
         // 対象にrevealクラスを付与
+        let added = 0;
         targets.forEach((sel) => {
           document.querySelectorAll(sel).forEach((el) => {
             el.classList.add("reveal");
+            added++;
             if (
               el.classList.contains("service-item") ||
               el.classList.contains("handling-item")
@@ -318,6 +322,20 @@
             }
           });
         });
+
+        // 何も見つからないなら何もしない（真っ白防止）
+        if (added === 0) return;
+
+        // JSが動いているときだけ hidden を有効化（真っ白防止の核心）
+        document.documentElement.classList.add("reveal-ready");
+
+        // IOがなければ全部表示
+        if (!("IntersectionObserver" in window)) {
+          document
+            .querySelectorAll(".reveal")
+            .forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
 
         // リストは順番に出す（stagger）
         document.querySelectorAll(".strength-list li").forEach((el, i) => {
@@ -337,7 +355,14 @@
         );
 
         document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-      }
+
+        // さらに保険：もし何かで発火しない場合も、1.5秒後に全表示
+        setTimeout(() => {
+          document
+            .querySelectorAll(".reveal")
+            .forEach((el) => el.classList.add("is-visible"));
+        }, 1500);
+      });
     </script>
   </body>
 </html>
