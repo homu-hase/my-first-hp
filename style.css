@@ -344,20 +344,26 @@ header img {
   border: none;
   background: transparent;
 }
+
+/* ★ここが今回の本命 */
+.strength-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
 .strength-list li {
   position: relative;
   padding-left: var(--sp-16);
   margin-bottom: var(--sp-16);
   line-height: 1.8;
-  left: -4px;
 }
 
 .strength-list li::before {
   content: "・";
   position: absolute;
-  left: var(--sp-0);
-  color: var(--gold-color);
   left: -4px;
+  color: var(--gold-color);
 }
 
 .strength-note {
@@ -367,7 +373,6 @@ header img {
   color: var(--c-text-666);
   text-align: center;
 }
-
 /* ====== 対応業務・取扱領域 ====== */
 .handling {
   background: var(--c-bg-fff);
@@ -458,8 +463,9 @@ header img {
 
 .profile-table dt {
   font-weight: 600;
-  color: var(--c-text-333);
+  color: #bfa14a;
 }
+
 
 .profile-table dd {
   margin: var(--sp-0);
@@ -502,7 +508,7 @@ header img {
   color: var(--c-text-555);
   margin-bottom: 32px;   /* ←ここを広げる（重要） */
 }
-}
+
 
 .cta .btn {
   display: inline-block;
@@ -527,12 +533,16 @@ header img {
 }
 
 .cta-copy {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 1.9;
-  margin-bottom: 12px;   /* 少し詰める */
-  color: var(--c-text-333);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 18px;
+  display: block;
+  font-size: 24px;
+  color: #222;
 }
+
 
 .btn {
   display: inline-block;
@@ -709,4 +719,24 @@ footer small {
     line-height: 1.7;
     margin-bottom: 16px;
   }
+ 
+  /* 事業概要 */
+  .profile-table dl {
+    display: block;        /* 横並び解除 */
+    margin-bottom: 18px;
+  }
+
+  .profile-table dt {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+
+  .profile-table dd {
+    display: block;
+    margin: 0;
+    text-align: left;
+  }
+
 }

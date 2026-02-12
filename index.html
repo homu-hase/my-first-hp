@@ -195,8 +195,8 @@
         <h2>業務相談受付</h2>
 
         <p class="cta-copy">
-          「何から始めればいいかわからない」<br />
-          その段階からご相談ください。
+          <strong>何から始めればいいかわからない。</strong>
+          その段階から、ご相談ください。
         </p>
 
         <p class="cta-lead">
@@ -229,7 +229,7 @@
     </footer>
 
     <script>
-      const text = "許可は、準備で決まる。";
+      const text = "許可は、\n準備で決まる。";
       const element = document.getElementById("typing");
       const cursor = document.getElementById("cursor");
 
@@ -237,7 +237,15 @@
 
       function type() {
         if (index < text.length) {
-          element.textContent += text.charAt(index);
+          const char = text.charAt(index);
+
+          // 改行処理
+          if (char === "\n") {
+            element.innerHTML += "<br>";
+          } else {
+            element.innerHTML += char;
+          }
+
           index++;
           setTimeout(type, 120);
         } else {
@@ -258,6 +266,14 @@
           cta.classList.add("show");
         }
       });
+    </script>
+    <script>
+      document.querySelector(".cta-copy strong").style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector(".cta-copy strong").style.transition =
+          "opacity 1s";
+        document.querySelector(".cta-copy strong").style.opacity = 1;
+      }, 300);
     </script>
   </body>
 </html>
