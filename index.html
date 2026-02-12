@@ -270,15 +270,18 @@
       setTimeout(type, 400);
     </script>
     <script>
-      window.addEventListener("scroll", function () {
-        const cta = document.querySelector(".cta");
-        const position = cta.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight * 0.85;
+      // PCだけCTA表示（1025px以上）
+      if (window.matchMedia("(min-width: 1025px)").matches) {
+        window.addEventListener("scroll", function () {
+          const cta = document.querySelector(".cta");
+          const position = cta.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight * 0.85;
 
-        if (position < screenPosition) {
-          cta.classList.add("show");
-        }
-      });
+          if (position < screenPosition) {
+            cta.classList.add("show");
+          }
+        });
+      }
     </script>
     <script>
       document.querySelector(".cta-copy strong").style.opacity = 0;
