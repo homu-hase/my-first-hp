@@ -588,47 +588,66 @@ footer small {
    iPad（〜1024px）
 ========================= */
 @media (max-width: 1024px) {
-  .section {
-    padding: var(--sp-80) var(--sp-0);
-  }
 
-  .service-list {
-    gap: var(--sp-32);
-    border: none; /* ← 表の上下線を消す */
-    background: transparent;
-  }
-
-  .service-item {
-    border: 1px solid var(--c-border-e0); /* ← iPadは枠あり */
-    border-radius: var(--r-8);
-  }
-
-  .service-item:not(:first-child) {
-    border-left: none; /* ← 縦線は消す */
-  }
-}
-/* =========================
-   iPad（〜1024px）
-========================= */
-@media (max-width: 1024px) {
+  /* セクション余白 */
   .section {
     padding: var(--sp-80) 0;
   }
 
-  /* 2列 */
+  h2 {
+    font-size: 28px;
+  }
+
+  .section-lead {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* 2列レイアウト */
   .service-list,
   .handling-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-32);
+    border: none;
+    background: transparent;
   }
 
+  /* カード */
   .service-item,
   .handling-item {
     padding: var(--sp-40) var(--sp-32);
+    border: 1px solid var(--c-border-e0);
+    border-radius: var(--r-8);
+  }
+
+  /* 縦線防止 */
+  .service-item:not(:first-child) {
+    border-left: none;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 700ms ease, transform 700ms ease;
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* カードは少しだけメリハリ */
+  .reveal.reveal-card {
+    transform: translateY(22px);
   }
 }
-
 /* =========================
    iPhone（〜768px）
 ========================= */
@@ -778,4 +797,10 @@ footer small {
   .profile-table dl {
     margin-bottom: 14px;
   }
+
+ .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+    }
 }

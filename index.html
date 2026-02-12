@@ -288,5 +288,53 @@
         document.querySelector(".cta-copy strong").style.opacity = 1;
       }, 300);
     </script>
+
+    <script>
+      // iPad/スマホだけ scroll reveal
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        const targets = [
+          ".section .inner > h2",
+          ".section .inner > .section-lead",
+          ".service-item",
+          ".handling-item",
+          ".strength-list li",
+          ".profile-table dl",
+          ".cta .inner > *",
+          "footer .inner > *",
+        ];
+
+        // 対象にrevealクラスを付与
+        targets.forEach((sel) => {
+          document.querySelectorAll(sel).forEach((el) => {
+            el.classList.add("reveal");
+            if (
+              el.classList.contains("service-item") ||
+              el.classList.contains("handling-item")
+            ) {
+              el.classList.add("reveal-card");
+            }
+          });
+        });
+
+        // リストは順番に出す（stagger）
+        document.querySelectorAll(".strength-list li").forEach((el, i) => {
+          el.style.transitionDelay = `${i * 80}ms`;
+        });
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target); // 1回だけでOK
+              }
+            });
+          },
+          { root: null, threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+        );
+
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      }
+    </script>
   </body>
 </html>
