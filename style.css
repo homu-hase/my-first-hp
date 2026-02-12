@@ -652,7 +652,8 @@ footer small {
   /* FV（スマホ） */
   .fv {
     margin: 12px;
-    padding: 44px 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .fv h1 {
@@ -680,7 +681,8 @@ footer small {
 
   /* セクション余白 */
   .section {
-    padding: var(--sp-64) 0;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 
   .strength-list li {
@@ -727,8 +729,8 @@ footer small {
   }
 
   .cta-copy {
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 20px;
+    line-height: 1.6;
     margin-bottom: 16px;
   }
 
