@@ -364,5 +364,11 @@
         }, 1500);
       });
     </script>
+    <script>
+      // スマホ・iPadは最初からCTA表示
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        document.querySelector(".cta").classList.add("show");
+      }
+    </script>
   </body>
 </html>

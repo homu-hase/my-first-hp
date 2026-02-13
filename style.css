@@ -86,7 +86,8 @@ body {
   background: var(--c-bg-fff);
 }
 
-h2, h3 {
+h2,
+h3 {
   margin: var(--sp-0) var(--sp-0) var(--sp-16);
   font-weight: 600;
 }
@@ -195,7 +196,7 @@ header img {
     var(--c-fv-2) 60%,
     var(--c-fv-3) 100%
   );
-  padding: 80px 0 56px; /* ←まずここ */S
+  padding: 80px 0 56px; /* ←まずここ */
   margin: var(--sp-16) var(--sp-24) var(--sp-8);
   border-radius: 0;
   position: relative;
@@ -253,7 +254,6 @@ header img {
   margin: 0 auto;
   line-height: 1.9;
 }
-
 
 .fv::after {
   content: "";
@@ -354,7 +354,7 @@ header img {
 
 .strength-list li {
   position: relative;
-  padding-left: 1.4em;     /* 点ぶんのスペース確保 */
+  padding-left: 1.4em; /* 点ぶんのスペース確保 */
   margin-bottom: 12px;
   line-height: 1.85;
 }
@@ -467,7 +467,6 @@ header img {
   color: #bfa14a;
 }
 
-
 .profile-table dd {
   margin: var(--sp-0);
   line-height: 1.8;
@@ -482,7 +481,6 @@ header img {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
-
 }
 
 .cta.show {
@@ -507,9 +505,8 @@ header img {
   font-size: 15px;
   line-height: 1.9;
   color: var(--c-text-555);
-  margin-bottom: 32px;   /* ←ここを広げる（重要） */
+  margin-bottom: 32px; /* ←ここを広げる（重要） */
 }
-
 
 .cta .btn {
   display: inline-block;
@@ -543,7 +540,6 @@ header img {
   font-size: 24px;
   color: #222;
 }
-
 
 .btn {
   display: inline-block;
@@ -588,7 +584,6 @@ footer small {
    iPad（〜1024px）
 ========================= */
 @media (max-width: 1024px) {
-
   /* セクション余白 */
   .section {
     padding: var(--sp-80) 0;
@@ -634,7 +629,9 @@ footer small {
   .reveal {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 700ms ease, transform 700ms ease;
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
     will-change: opacity, transform;
   }
 
@@ -647,7 +644,7 @@ footer small {
   .reveal.reveal-card {
     transform: translateY(22px);
   }
-   /* IntersectionObserverが無い環境では最初から表示 */
+  /* IntersectionObserverが無い環境では最初から表示 */
   .no-io .reveal {
     opacity: 1 !important;
     transform: none !important;
@@ -759,27 +756,27 @@ footer small {
   }
 
   .cta.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .cta {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
   }
 
-.btn {
+  .btn {
     display: block;
     width: 100%;
     text-align: center;
     font-size: 18px;
     padding: 16px 0;
   }
- 
+
   /* 事業概要 */
   .profile-table dl {
-    display: block;        /* 横並び解除 */
+    display: block; /* 横並び解除 */
     margin-bottom: 18px;
   }
 
@@ -795,7 +792,7 @@ footer small {
     margin: 0;
     text-align: left;
   }
-   .profile-table dd {
+  .profile-table dd {
     line-height: 1.7;
   }
 
@@ -803,11 +800,11 @@ footer small {
     margin-bottom: 14px;
   }
 
- .reveal {
+  .reveal {
     transition: none;
     transform: none;
     opacity: 1;
-    }
+  }
 }
 /* =========================
    Scroll reveal（iPad/スマホ）
@@ -818,7 +815,9 @@ footer small {
   html.reveal-ready .reveal {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 700ms ease, transform 700ms ease;
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
     will-change: opacity, transform;
   }
 
